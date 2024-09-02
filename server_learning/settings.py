@@ -73,10 +73,22 @@ WSGI_APPLICATION = 'server_learning.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'serverlearning',  # Replace with your RDS database name
+        'USER': 'rohitbxr243',  # Replace with your RDS master username
+        'PASSWORD': 'Rkumartotalrecall',  # Replace with your RDS master password
+        # 'HOST': '172.31.0.0/16',
+        'HOST': 'serverlearning.cvsyockgmeq7.eu-north-1.rds.amazonaws.com',  # Replace with your RDS endpoint
+        'PORT': '5432',  # Default PostgreSQL port
     }
 }
 
